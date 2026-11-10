@@ -1,0 +1,23 @@
+POWER ENGINE STORE — ÜCRETSİZ YAYIN
+
+Bu paket PHP gerektirmez. Cloudflare Pages'in ücretsiz *.pages.dev adresinde yayınlanacak statik site dosyalarıdır. Cloudflare Free planında tek varlık 25 MiB ile sınırlı olduğundan 65 MB PowerEngineStore.exe bu siteye konmaz; EXE GitHub Releases üzerinden indirilir.
+
+GEREKEN HESAPLAR
+- Cloudflare hesabı (ücretsiz Pages alanı ve *.pages.dev adresi)
+- GitHub hesabı (public release üzerinden EXE indirme/güncelleme)
+
+GITHUB HAZIRLIĞI
+1. GitHub'da public bir power-engine-store deposu aç.
+2. Releases > Create a new release sayfasından ilk sürüm (ör. v1.0.0) oluştur, PowerEngineStore.exe dosyasını ekleyip yayımla.
+3. site-config.js içinde GITHUB_KULLANICI_ADI değerini GitHub kullanıcı adınla değiştir. Depo adın farklıysa githubRepo değerini de değiştir.
+4. Uygulama projesindeki version.json dosyasındaki GitHub API adresine aynı kullanıcı/depo adını yazıp EXE'yi yeniden derle. Yeni EXE'yi GitHub Releases'e yükle.
+
+CLOUDFLARE PAGES
+1. Cloudflare Dashboard > Workers & Pages > Create application > Pages > Direct Upload yolunu seç.
+2. Bu klasördeki index.html, games.json, site-config.js ve PNG dosyalarını yükle.
+3. Cloudflare'ın verdiği HTTPS *.pages.dev adresini ziyaret et.
+
+GÜNCELLEME YÜKLE
+Sitedeki kilitli güncelleme düğmesi GitHub Releases oluşturma sayfasını açar. GitHub hesabında oturum açıp yeni sürüm ve PowerEngineStore.exe yükleyerek yayımla. Yalnız depo yazma izni olan hesaplar sürüm yayımlayabilir.
+
+Gizli gift_code_hashes.txt dosyasını public GitHub deposuna yükleme.

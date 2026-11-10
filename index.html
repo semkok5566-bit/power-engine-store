@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171a21">
+    <meta name="description" content="Power Engine Store oyun kataloğunu keşfet.">
+    <title>Power Engine Store</title>
+    <link rel="icon" type="image/png" href="power-engine-emblem.png">
+    <script src="site-config.js"></script>
+    <style>
+        :root{color-scheme:dark;--bg:#1b2838;--bar:#171a21;--panel:#16202d;--panel2:#223246;--line:#30445b;--text:#e5eaf0;--muted:#9ba9b8;--blue:#66c0f4;--green:#a4d007;--deep:#101923}
+        *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#1b2838,#182431 640px,#1b2838);color:var(--text);font-family:Arial,"Segoe UI",sans-serif;min-height:100vh}a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1220px,calc(100% - 40px));margin:auto}
+        .topbar{position:sticky;top:0;z-index:20;background:#171a21f2;border-bottom:1px solid #34495e;box-shadow:0 5px 18px #0004;backdrop-filter:blur(12px)}.nav{height:78px;display:flex;align-items:center;gap:28px}.brand{display:flex;align-items:center;gap:11px;min-width:max-content}.brand-mark{height:44px;width:44px;display:block;object-fit:contain;flex:none}.brand-name{font-size:15px;font-weight:800;letter-spacing:.07em}.brand-name b{color:var(--blue)}.links{display:flex;align-items:center;gap:7px}.nav-link{border:0;background:transparent;color:#c7d5e0;padding:12px 14px;border-radius:2px;font-size:13px;font-weight:700;cursor:pointer}.nav-link:hover,.nav-link.active{color:#fff;background:linear-gradient(#2c4a62,#20374c)}.nav-spacer{flex:1}.nav-search{width:min(260px,24vw);background:#0e151d;border:1px solid #354a5f;color:#fff;border-radius:3px;padding:11px 13px;outline:none}.nav-search:focus{border-color:var(--blue)}.nav-button,.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:3px;padding:11px 15px;background:linear-gradient(90deg,#75ad1b,#91c72b);color:#fff;font-weight:700;font-size:12px;cursor:pointer;transition:filter .18s,transform .18s}.nav-button:hover,.button:hover{filter:brightness(1.1);transform:translateY(-1px)}.nav-button.admin{background:#2a475e;color:#d4e2ee}.button.secondary{background:#2b4359;color:#dce7f0}.button.admin{background:#2a475e;color:#c7d5e0}.button.small{padding:9px 12px}
+        main{padding:25px 0 55px}.hero{display:grid;grid-template-columns:1fr 1.15fr;min-height:345px;background:#142131;border:1px solid #31465b;box-shadow:0 18px 38px #0003;overflow:hidden}.hero-copy{padding:36px 32px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(100deg,#142131 78%,#14213100)}.eyebrow{font-size:10px;letter-spacing:.18em;color:var(--blue);font-weight:800}.hero h1{font-size:clamp(33px,4vw,53px);line-height:1.02;letter-spacing:-.04em;margin:14px 0 13px;color:#fff}.hero p{color:#bfccd8;line-height:1.65;font-size:14px;max-width:440px;margin:0}.hero-actions{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}.hero-art{min-height:345px;position:relative;overflow:hidden;background:radial-gradient(circle at 75% 25%,#39739a,#18283b 57%,#101923)}.hero-art img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;opacity:.78;mask-image:linear-gradient(90deg,transparent,#000 22%)}.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#101923a8,transparent 65%);pointer-events:none}.hero-caption{position:absolute;z-index:1;right:24px;bottom:22px;text-align:right;text-shadow:0 2px 8px #000}.hero-caption span{color:var(--blue);font-size:10px;font-weight:800;letter-spacing:.16em}.hero-caption strong{display:block;font-size:20px;margin-top:6px}
+        .section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:30px 0 14px}.section-head h2{font-size:22px;font-weight:500;margin:0;color:#fff}.section-head p{font-size:12px;color:var(--muted);margin:6px 0 0}.section-tools{display:flex;gap:8px;align-items:center}.select{background:#101923;border:1px solid var(--line);color:var(--text);padding:10px 12px;border-radius:3px}
+        .featured-row{display:flex;gap:13px;overflow:auto;padding:0 2px 18px;scroll-snap-type:x mandatory}.featured-card{flex:0 0 245px;scroll-snap-align:start}.game-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.game-card{background:#16202d;border:1px solid #ffffff10;box-shadow:0 3px 10px #0003;transition:transform .18s,box-shadow .18s}.game-card:hover{transform:translateY(-3px);box-shadow:0 12px 24px #0005}.cover{height:148px;position:relative;background:linear-gradient(135deg,#27435b,#101923);overflow:hidden}.cover img{width:100%;height:100%;object-fit:cover;display:block}.cover-badge{position:absolute;left:9px;top:9px;background:#101923d9;color:#c7d5e0;padding:5px 7px;font-size:9px;text-transform:uppercase;letter-spacing:.09em}.card-body{padding:13px}.game-title{font-size:14px;font-weight:700;line-height:1.38;min-height:39px;color:#f3f6fa}.developer{font-size:11px;color:var(--muted);margin-top:5px;min-height:15px}.card-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid #ffffff12;margin-top:12px;padding-top:11px}.price{font-weight:700;color:#d9e3ec;font-size:14px}.price.unavailable{font-size:11px;color:#dca05e}.card-actions{display:flex;gap:7px;margin-top:12px}.card-actions .button{flex:1;padding:9px 7px;font-size:10px}.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 12px;background:#16202d;border:1px dashed #42576a}
+        .footer{background:#171a21;border-top:1px solid #33485d;padding:22px 0;color:#8998a8;font-size:11px}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.footer-brand{display:flex;align-items:center;gap:12px}.footer-brand img{width:46px;height:46px;object-fit:contain}
+        .modal{position:fixed;inset:0;z-index:40;background:#05090edb;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}.modal.open{display:flex}.modal-card{width:min(740px,100%);max-height:90vh;overflow:auto;background:#1b2838;border:1px solid #40566b;box-shadow:0 24px 90px #0009}.modal-image{height:290px;position:relative;background:#101923}.modal-image img{width:100%;height:100%;object-fit:cover}.modal-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#16202d,transparent 55%)}.modal-title{position:absolute;z-index:1;left:24px;right:24px;bottom:20px;font-size:28px;font-weight:800;color:#fff;text-shadow:0 2px 8px #000}.modal-content{padding:22px 24px}.modal-meta{display:flex;gap:20px;flex-wrap:wrap;color:#bdc9d5;font-size:13px;margin:12px 0 20px}.modal-actions{display:flex;gap:10px;flex-wrap:wrap}.close{position:absolute;z-index:2;top:12px;right:12px;border:0;border-radius:2px;background:#101923cc;color:#fff;width:36px;height:36px;cursor:pointer;font-size:18px}.toast{position:fixed;z-index:60;bottom:22px;left:50%;transform:translateX(-50%);background:#172330;border:1px solid #45617a;color:#e9f1f8;padding:12px 17px;box-shadow:0 10px 30px #0007;display:none}.toast.show{display:block}
+        @media(max-width:930px){.game-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1fr 1fr}.hero-copy{padding:28px 22px}.nav{gap:14px}.links{gap:0}.nav-link{padding:10px}}
+        @media(max-width:680px){.wrap{width:calc(100% - 28px)}.nav{height:auto;min-height:68px;flex-wrap:wrap;padding:10px 0;gap:8px}.brand{flex:1}.brand-name{font-size:12px}.brand-mark{width:36px;height:36px}.links{order:3;width:100%;justify-content:space-between}.nav-link{font-size:10px;padding:9px 7px}.nav-search{order:2;width:45%;font-size:12px}.nav-button{order:2;padding:9px 10px;font-size:10px}.nav-button.admin{order:4;width:100%}.hero{display:flex;flex-direction:column}.hero-copy{padding:25px 20px}.hero h1{font-size:36px}.hero-art{min-height:210px}.hero-art img{mask-image:none}.section-head{align-items:flex-start;flex-direction:column}.section-tools{width:100%}.select{flex:1}.game-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.cover{height:118px}.card-body{padding:10px}.game-title{font-size:12px;min-height:50px}.developer{font-size:10px}.card-actions{flex-direction:column}.card-actions .button{width:100%}.featured-card{flex-basis:210px}.modal-image{height:210px}.modal-title{font-size:22px}.modal-content{padding:17px}.footer-inner{flex-direction:column}}
+        @media(max-width:380px){.game-grid{grid-template-columns:1fr}.cover{height:165px}.card-actions{flex-direction:row}}
+    </style>
+</head>
+<body>
+<header class="topbar"><div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Power Engine Store ana sayfa"><img class="brand-mark" src="power-engine-emblem-white.png" alt=""><span class="brand-name">POWER ENGINE <b>STORE</b></span></a>
+    <nav class="links" aria-label="Ana menü"><button class="nav-link active" data-view="store">MAĞAZA</button><button class="nav-link" data-view="library">KÜTÜPHANEM</button></nav>
+    <span class="nav-spacer"></span>
+    <input id="searchInput" class="nav-search" type="search" placeholder="Oyun ara…" aria-label="Oyun ara">
+    <a class="nav-button admin" href="#" id="updateUpload">GÜNCELLEME YÜKLE 🔒</a><a class="nav-button" href="#" id="appDownload">UYGULAMAYI İNDİR ↓</a>
+</div></header>
+<main id="top" class="wrap">
+    <section class="hero" aria-label="Power Engine Store vitrini">
+        <div class="hero-copy"><span class="eyebrow">POWER ENGINE SEÇKİSİ</span><h1>Bir sonraki<br>macera burada.</h1><p>Oyunları keşfet, koleksiyonuna ekle ve sana uygun macerayı bul. Power Engine Store kataloğuna göz at.</p><div class="hero-actions"><a class="button" href="#catalog">KATALOĞU KEŞFET ↓</a><a class="button secondary" href="#" id="heroAppDownload">MASAÜSTÜ UYGULAMASI</a></div></div>
+        <div class="hero-art"><img id="heroImage" alt="Öne çıkan oyun görseli" hidden><div class="hero-caption"><span>POWER ENGINE STORE</span><strong id="heroGameName">Oyun dünyana hoş geldin</strong></div></div>
+    </section>
+    <section id="featuredSection">
+        <div class="section-head"><div><h2>Günün vitrini</h2><p id="featuredNote">Öne çıkan oyunlar yükleniyor…</p></div></div>
+        <div id="featuredGrid" class="featured-row"><div class="empty">Vitrin yükleniyor…</div></div>
+    </section>
+    <section id="catalog">
+        <div class="section-head"><div><h2 id="catalogTitle">Power Engine koleksiyonu</h2><p id="catalogCount">Oyunlar yükleniyor…</p></div><div class="section-tools"><select id="sortSelect" class="select" aria-label="Oyunları sırala"><option value="featured">Öne çıkanlar</option><option value="name">Ada göre</option><option value="price-low">Fiyat: düşükten yükseğe</option><option value="price-high">Fiyat: yüksekten düşüğe</option></select><select id="collectionFilter" class="select" aria-label="Koleksiyon filtresi"><option value="all">Tüm oyunlar</option><option value="owned">Kütüphanem</option></select></div></div>
+        <div id="gameGrid" class="game-grid"><div class="empty">Oyunlar yükleniyor…</div></div>
+    </section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><span class="footer-brand"><img src="power-engine-emblem-white.png" alt="Power Engine Store logosu"><span>© 2026 Power Engine Store</span></span><span>Fiyat ve bulunabilirlik bilgileri katalogdan alınır, değişebilir.</span><a href="#" id="footerUpdateUpload">Yönetici / Güncelleme</a></div></footer>
+<div id="gameModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><div class="modal-image"><img id="modalImage" alt=""><button id="closeModal" class="close" aria-label="Kapat">×</button><div id="modalTitle" class="modal-title"></div></div><div class="modal-content"><div id="modalMeta" class="modal-meta"></div><div class="modal-actions"><button id="libraryButton" class="button secondary">＋ KÜTÜPHANEYE EKLE</button><a id="storeButton" class="button" target="_blank" rel="noopener noreferrer">RESMİ MAĞAZADA İNCELE ↗</a></div></div></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>
+(() => {
+    const $ = (id) => document.getElementById(id);
+    const grid = $('gameGrid'), featuredGrid = $('featuredGrid'), search = $('searchInput');
+    let games = [], featured = [], activeView = 'store', selectedGame = null, toastTimer;
+    const releaseConfig = window.PEGS_CONFIG || {};
+    const owner = String(releaseConfig.githubOwner || 'GITHUB_KULLANICI_ADI');
+    const repo = String(releaseConfig.githubRepo || 'power-engine-store');
+    const configured = owner !== 'GITHUB_KULLANICI_ADI' && !!repo;
+    const releases = configured ? `https://github.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/releases` : '';
+    function setupReleaseLinks() {
+        const download = configured ? `${releases}/latest/download/PowerEngineStore.exe` : '#';
+        [['appDownload', download], ['heroAppDownload', download], ['updateUpload', configured ? `${releases}/new` : '#'], ['footerUpdateUpload', configured ? `${releases}/new` : '#']].forEach(([id,url]) => { const link=$(id); if(link) link.href=url; });
+        document.querySelectorAll('#appDownload,#heroAppDownload').forEach(link=>link.addEventListener('click',event=>{if(!configured){event.preventDefault();showToast('Ücretsiz yayın ayarı için GitHub hesabı bağlanmalı.');}}));
+        document.querySelectorAll('#updateUpload,#footerUpdateUpload').forEach(link=>link.addEventListener('click',event=>{if(!configured){event.preventDefault();showToast('Güncelleme yükleme bağlantısı henüz ayarlanmadı.');}}));
+    }
+    const safeHttps = (value) => { try { const url = new URL(value); return url.protocol === 'https:' ? url.href : ''; } catch { return ''; } };
+    const libraryGet = () => { try { const v=JSON.parse(localStorage.getItem('pegsLibrary')||'[]'); return Array.isArray(v)?v.map(String):[]; } catch { return []; } };
+    const librarySet = (value) => localStorage.setItem('pegsLibrary', JSON.stringify(value));
+    function priceText(game) {
+        if (game.price === null || game.price === undefined || game.price === '') return game.availability || 'Fiyat bilgisi yok';
+        const amount = Number(game.price);
+        if (!Number.isFinite(amount)) return 'Fiyat bilgisi yok';
+        if (amount === 0) return 'Ücretsiz';
+        try { return new Intl.NumberFormat('en-US',{style:'currency',currency:game.currency||game.price_currency||'USD'}).format(amount); }
+        catch { return `$${amount.toFixed(2)}`; }
+    }
+    function showToast(message) { const t=$('toast'); t.textContent=message; t.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),2400); }
+    function imageElement(url, alt) { const img=document.createElement('img'); img.alt=alt; img.loading='lazy'; img.src=safeHttps(url); img.onerror=()=>img.remove(); return img; }
+    function cardFor(game, index, isFeatured=false) {
+        const article=document.createElement('article'); article.className='game-card'+(isFeatured?' featured-card':'');
+        const cover=document.createElement('div'); cover.className='cover';
+        const image=imageElement(game.cover_url||game.header||'', `${game.name||'Oyun'} kapak görseli`); cover.append(image);
+        const badge=document.createElement('span'); badge.className='cover-badge'; badge.textContent=game.section||'Power Engine seçkisi'; cover.append(badge);
+        const body=document.createElement('div'); body.className='card-body';
+        const title=document.createElement('div'); title.className='game-title'; title.textContent=game.name||'İsimsiz oyun';
+        const developer=document.createElement('div'); developer.className='developer'; developer.textContent=game.developer||'Power Engine Store kataloğu';
+        const meta=document.createElement('div'); meta.className='card-meta';
+        const price=document.createElement('strong'); price.className='price'; price.textContent=priceText(game); if(game.availability && (game.price===null||game.price===undefined))price.classList.add('unavailable');
+        const size=document.createElement('span'); size.className='developer'; size.textContent=game.size||''; meta.append(price,size);
+        const actions=document.createElement('div'); actions.className='card-actions';
+        const details=document.createElement('button'); details.className='button secondary'; details.type='button'; details.textContent='DETAYLAR'; details.addEventListener('click',()=>openDetails(game));
+        const owned=libraryGet().includes(String(game.id)); const add=document.createElement('button'); add.className='button'; add.type='button'; add.textContent=owned?'✓ KÜTÜPHANEDE':'＋ KÜTÜPHANE'; add.addEventListener('click',()=>toggleLibrary(game));
+        actions.append(details,add); body.append(title,developer,meta,actions); article.append(cover,body); return article;
+    }
+    function renderFeatured() {
+        featuredGrid.replaceChildren();
+        if(!featured.length){featuredGrid.innerHTML='<div class="empty">Şu anda vitrin oyunu yüklenemedi.</div>'; $('featuredNote').textContent='Vitrin geçici olarak kullanılamıyor.'; return;}
+        $('featuredNote').textContent=`${featured.length} oyun · fırsatlar, çok satanlar ve yeni çıkanlar`;
+        const hero=featured[0]; $('heroGameName').textContent=hero.name||'Oyun dünyana hoş geldin';
+        const heroUrl=safeHttps(hero.cover_url||''); if(heroUrl){$('heroImage').src=heroUrl;$('heroImage').hidden=false;}
+        featured.slice(0,12).forEach((game,index)=>featuredGrid.append(cardFor(game,index,true)));
+    }
+    function renderGames() {
+        const query=search.value.trim().toLocaleLowerCase('tr-TR'); const collection=$('collectionFilter').value; const sort=$('sortSelect').value; const library=libraryGet();
+        let visible=games.filter(game=>(collection!=='owned'||library.includes(String(game.id)))&&(activeView!=='library'||library.includes(String(game.id)))&&(String(game.name||'')+' '+String(game.developer||'')).toLocaleLowerCase('tr-TR').includes(query));
+        if(sort==='name')visible.sort((a,b)=>String(a.name).localeCompare(String(b.name),'tr'));
+        if(sort==='price-low')visible.sort((a,b)=>(Number(a.price)||Infinity)-(Number(b.price)||Infinity));
+        if(sort==='price-high')visible.sort((a,b)=>(Number(b.price)||-Infinity)-(Number(a.price)||-Infinity));
+        $('catalogTitle').textContent=activeView==='library'?'Kütüphanem':'Power Engine koleksiyonu';
+        $('catalogCount').textContent=activeView==='library'?`${visible.length} oyun kütüphanende`:`${visible.length} oyun gösteriliyor`;
+        grid.replaceChildren();
+        if(!visible.length){const empty=document.createElement('div');empty.className='empty';empty.textContent=activeView==='library'?'Kütüphanen boş. Mağazadan oyun ekleyebilirsin.':'Aramana uygun oyun bulunamadı.';grid.append(empty);return;}
+        visible.forEach((game,index)=>grid.append(cardFor(game,index)));
+    }
+    function toggleLibrary(game) {
+        const library=libraryGet(), id=String(game.id); const exists=library.includes(id);
+        librarySet(exists?library.filter(item=>item!==id):[...library,id]);
+        showToast(exists?'Oyun kütüphanenden kaldırıldı.':'Oyun kütüphanene eklendi.'); renderGames();
+        if($('gameModal').classList.contains('open')&&selectedGame?.id===game.id)updateLibraryButton(game);
+    }
+    function updateLibraryButton(game) { const owned=libraryGet().includes(String(game.id)); $('libraryButton').textContent=owned?'✓ KÜTÜPHANEDE':'＋ KÜTÜPHANEYE EKLE'; }
+    function openDetails(game) {
+        selectedGame=game; $('modalTitle').textContent=game.name||''; $('modalImage').src=safeHttps(game.cover_url||''); $('modalImage').alt=`${game.name||'Oyun'} kapak görseli`;
+        $('modalMeta').replaceChildren();
+        [["FİYAT",priceText(game)],["BOYUT",game.size||'—'],["DURUM",game.availability||'Katalogda']].forEach(([label,value])=>{const span=document.createElement('span');span.textContent=`${label}: ${value}`;$('modalMeta').append(span);});
+        updateLibraryButton(game); const store=safeHttps(game.store_url||''); $('storeButton').href=store||'#'; $('storeButton').style.display=store?'inline-flex':'none'; $('gameModal').classList.add('open');
+    }
+    async function load() {
+        try {
+            const gameResponse=await fetch('games.json',{headers:{Accept:'application/json'}});
+            if(!gameResponse.ok)throw new Error(); games=await gameResponse.json(); featured=Array.isArray(games)?games.slice(0,12):[];
+            if(!Array.isArray(games))throw new Error(); renderFeatured(); renderGames();
+        } catch { grid.innerHTML='<div class="empty">Oyun kataloğu yüklenemedi. games.json dosyasının bulunduğunu kontrol et.</div>'; featuredGrid.innerHTML='<div class="empty">Vitrin yüklenemedi.</div>'; $('catalogCount').textContent='Bağlantı kurulamadı'; }
+    }
+    document.querySelectorAll('.nav-link').forEach(link=>link.addEventListener('click',()=>{activeView=link.dataset.view;document.querySelectorAll('.nav-link').forEach(item=>item.classList.toggle('active',item===link));$('collectionFilter').value='all';renderGames();document.getElementById('catalog').scrollIntoView({behavior:'smooth'});}));
+    search.addEventListener('input',renderGames); $('sortSelect').addEventListener('change',renderGames); $('collectionFilter').addEventListener('change',renderGames);
+    $('libraryButton').addEventListener('click',()=>selectedGame&&toggleLibrary(selectedGame)); $('closeModal').addEventListener('click',()=>$('gameModal').classList.remove('open'));
+    $('gameModal').addEventListener('click',event=>{if(event.target===$('gameModal'))$('gameModal').classList.remove('open');}); document.addEventListener('keydown',event=>{if(event.key==='Escape')$('gameModal').classList.remove('open');});
+    setupReleaseLinks();
+    load();
+})();
+</script>
+</body>
+</html>
+
+
+
